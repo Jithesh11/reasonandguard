@@ -110,10 +110,12 @@
   .site-head{
     position:sticky;top:0;z-index:40;
     background:color-mix(in srgb,var(--paper) 86%,transparent);
-    backdrop-filter:blur(12px);
-    -webkit-backdrop-filter:blur(12px);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
     border-bottom:1px solid transparent;
     transition:border-color .25s,box-shadow .25s;
+    will-change:transform;
+    transform:translateZ(0);
   }
   .site-head.scrolled{
     border-bottom-color:var(--line);
@@ -941,21 +943,23 @@
 
   /* orb parallax — screen-blend circles drift as you scroll */
   if (!reduced) {
-    var orbs = document.querySelectorAll('[data-depth]');
+    var orbEntries = Array.prototype.map.call(document.querySelectorAll('[data-depth]'), function(orb){
+      return { el: orb, host: orb.closest('section'), depth: parseFloat(orb.dataset.depth) };
+    });
     var ticking = false;
+    var vh = innerHeight;
     function parallax(){
-      orbs.forEach(function(orb){
-        var host = orb.closest('section');
-        var rect = host.getBoundingClientRect();
-        var progress = rect.top / innerHeight;
-        var depth = parseFloat(orb.dataset.depth);
-        orb.style.transform = 'translateY(' + (progress * depth * 320).toFixed(1) + 'px)';
+      orbEntries.forEach(function(o){
+        var rect = o.host.getBoundingClientRect();
+        var progress = rect.top / vh;
+        o.el.style.transform = 'translate3d(0,' + (progress * o.depth * 320).toFixed(1) + 'px,0)';
       });
       ticking = false;
     }
     addEventListener('scroll', function(){
       if (!ticking) { requestAnimationFrame(parallax); ticking = true; }
     }, { passive:true });
+    addEventListener('resize', function(){ vh = innerHeight; }, { passive:true });
     parallax();
   }
 
