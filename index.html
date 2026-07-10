@@ -191,7 +191,7 @@
     font-weight:600;
     line-height:1.22;
     letter-spacing:-.015em;
-    max-width:19ch;
+    max-width:15ch;
   }
   .hero h1 em{font-style:normal;color:var(--cyan)}
   .hero .lede{
@@ -557,31 +557,6 @@
   .trace-line b{color:var(--seafoam);font-weight:500;letter-spacing:.08em}
   .trace-line.guard b{color:var(--cyan)}
 
-  /* ============ slate strip — folded into Portals, one line ============ */
-  .slate-strip{
-    margin-top:clamp(28px,4vh,40px);
-    padding-top:24px;
-    border-top:1px solid var(--line);
-    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
-    gap:16px 24px;
-  }
-  .shift-track{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-  .shift-node{
-    display:flex;align-items:baseline;gap:7px;
-    font:500 13.5px/1 var(--display);letter-spacing:-.005em;color:var(--ink);
-  }
-  .shift-node .tag{color:var(--mist);font-size:10px}
-  .shift-node.now{color:var(--seafoam-deep);font-weight:600}
-  .shift-arrow{font:400 13px/1 var(--mono);color:var(--mist)}
-  .verdict-chips{display:flex;gap:8px;flex-wrap:wrap}
-  .verdict-chips code{
-    font:600 10.5px/1 var(--mono);letter-spacing:.12em;
-    padding:7px 12px;border-radius:999px;
-  }
-  .verdict-chips .go{color:var(--ink);background:rgba(30,155,130,.16);border:1px solid rgba(30,155,130,.32)}
-  .verdict-chips .wait{color:var(--ink);background:rgba(43,144,149,.14);border:1px solid rgba(43,144,149,.3)}
-  .verdict-chips .not{color:#7c2f28;background:rgba(255,138,128,.16);border:1px solid rgba(255,138,128,.45)}
-
   /* ============ method (ink ground) + folded-in honesty strip ============ */
   .honesty{background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
   .honesty .sec-head .kicker{color:var(--seafoam)}
@@ -611,13 +586,11 @@
   .step p b{color:var(--paper);font-weight:600}
 
   .honesty-strip{
-    margin-top:clamp(36px,5vh,52px);
-    padding-top:22px;
+    margin-top:clamp(28px,4vh,40px);
+    padding-top:20px;
     border-top:1px solid var(--line-inverse);
-    display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 14px;
   }
-  .honesty-strip .tag{flex:none}
-  .honesty-strip p{font-size:14px;color:var(--mist-dark);max-width:60ch}
+  .honesty-strip p{font-size:14px;line-height:1.6;color:var(--mist-dark);max-width:60ch}
 
   /* ============ reach — sectors + engagement models ============ */
   .reach{background:#fff;border-block:1px solid var(--line)}
@@ -700,7 +673,7 @@
     <div class="wrap">
       <div>
         <p class="kicker in rise">ServiceNow Advisory</p>
-        <h1 id="hero-h" class="rise rise-2">ServiceNow, portals, and <em>AI</em> — we'll tell you what works, and what to do next.</h1>
+        <h1 id="hero-h" class="rise rise-2">ServiceNow, portals, &amp; <em>AI</em> — a straight answer on what works, &amp; a plan for what doesn't.</h1>
         <p class="lede rise rise-3">Reason &amp; Guard advises and delivers across the ServiceNow experience layer — portals, AIUX, AI, Claude integration, and enterprise systems. No guessing, no sales pitch — a straight answer, then a plan.</p>
         <div class="cta-row rise rise-4">
           <a class="btn btn-solid" href="mailto:kjithesh1109@gmail.com?subject=Readiness%20assessment">Book a readiness assessment</a>
@@ -818,18 +791,6 @@
         </article>
       </div>
 
-      <div class="slate-strip reveal">
-        <div class="shift-track" aria-label="Portal platform evolution">
-          <div class="shift-node"><span class="tag">Then</span><div>Service Portal</div></div>
-          <span class="shift-arrow" aria-hidden="true">→</span>
-          <div class="shift-node"><span class="tag">Now</span><div>Employee Center</div></div>
-          <span class="shift-arrow" aria-hidden="true">→</span>
-          <div class="shift-node now"><span class="tag">Next</span><div>Employee Slate</div></div>
-        </div>
-        <div class="verdict-chips" aria-label="Possible readiness verdicts">
-          <code class="go">GO</code><code class="wait">WAIT</code><code class="not">NOT YET</code>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -858,7 +819,6 @@
         </div>
       </div>
       <div class="honesty-strip reveal">
-        <span class="tag" style="color:var(--coral)">Honest by default</span>
         <p>If your foundation isn't ready, we'll say so — and tell you what to fix first.</p>
       </div>
     </div>
@@ -901,7 +861,7 @@
       <div class="reveal">
         <p class="kicker">Start with the verdict</p>
         <h2 id="cta-h">Find out if you're ready — before you budget as if you are.</h2>
-        <p>A readiness assessment is the cheapest decision in your AI program. Bring your instance and your ambitions; we'll bring the evidence.</p>
+        <p>Free. We look at your instance, your data, and your goals — and tell you exactly where you stand.</p>
         <div class="cta-row">
           <a class="btn btn-solid" href="mailto:kjithesh1109@gmail.com?subject=Readiness%20assessment">Book a readiness assessment</a>
           <a class="btn btn-line" href="mailto:kjithesh1109@gmail.com?subject=Reason%20%26%20Guard%20%E2%80%94%20question">Ask a question first</a>
