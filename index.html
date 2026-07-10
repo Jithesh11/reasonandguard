@@ -199,6 +199,7 @@
     overflow:hidden;
   }
   .orb-field{position:absolute;inset:0;pointer-events:none}
+  @media (max-width:640px){.orb-field{display:none}}
   .orb{
     position:absolute;border-radius:50%;
     mix-blend-mode:screen;opacity:.9;
@@ -285,6 +286,7 @@
     width:100%;
   }
   @media (max-width:900px){.mark-stage{max-width:230px;opacity:.75}}
+  @media (max-width:640px){.mark-stage{display:none}}
 
   .mark-stage .ring{
     position:absolute;inset:14%;
@@ -530,7 +532,10 @@
     display:grid;grid-template-columns:1.25fr .75fr;
     min-height:330px;
   }
-  @media (max-width:760px){.demo-panes{grid-template-columns:1fr}}
+  @media (max-width:760px){
+    .demo-panes{grid-template-columns:1fr}
+    .trace{display:none}
+  }
   @media (max-width:480px){
     .chrome{padding:10px 12px}
     .chrome .url{font-size:10.5px;padding:6px 10px}
@@ -1019,8 +1024,8 @@
     document.querySelectorAll('.stat .num').forEach(function(el){ counted.observe(el); });
   }
 
-  /* orb parallax — screen-blend circles drift as you scroll */
-  if (!reduced) {
+  /* orb parallax — screen-blend circles drift as you scroll (skipped on mobile: orbs hidden via CSS) */
+  if (!reduced && innerWidth > 640) {
     var orbEntries = Array.prototype.map.call(document.querySelectorAll('[data-depth]'), function(orb){
       return { el: orb, host: orb.closest('section'), depth: parseFloat(orb.dataset.depth) };
     });
