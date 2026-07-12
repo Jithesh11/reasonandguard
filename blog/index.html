@@ -97,7 +97,7 @@
       <a href="/#practice">Expertise</a>
       <a href="/#portals">Portals</a>
       <a href="/#method">Method</a>
-      <a class="btn btn-nav" href="mailto:kjithesh1109@gmail.com?subject=Readiness%20assessment">Start an assessment</a>
+      <a class="btn btn-nav" href="#" data-mailto="Readiness%20assessment">Start an assessment</a>
     </nav>
   </div>
 </header>
@@ -132,11 +132,23 @@
       <span class="wordmark">Reason<span class="amp">&amp;</span>Guard</span>
     </span>
     <span style="display:flex;align-items:center;gap:20px">
-      <a href="mailto:kjithesh1109@gmail.com">kjithesh1109@gmail.com</a>
+      <a href="https://www.linkedin.com/company/reason-guard" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#" data-mailto="Reason%20%26%20Guard%20%E2%80%94%20question">Contact</a>
       <a href="/">Home</a>
     </span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var user = ['k','j','i','t','h','e','s','h','1','1','0','9'].join('');
+  var addr = user + '@' + ['g','m','a','i','l'].join('') + '.' + 'com';
+  document.querySelectorAll('[data-mailto]').forEach(function(a){
+    a.href = 'mailto:' + addr + '?subject=' + a.getAttribute('data-mailto');
+    a.removeAttribute('data-mailto');
+  });
+})();
+</script>
 
 </body>
 </html>
